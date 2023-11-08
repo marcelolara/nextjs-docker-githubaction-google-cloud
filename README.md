@@ -16,6 +16,24 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Deploy on Google Cloud
+
+This project uses [Google Cloud Run](https://cloud.google.com/run) to deploy the application.
+
+### Setup
+Install the [Google Cloud SDK](https://cloud.google.com/sdk/docs/install) and authenticate with your Google account.
+
+```bash
+gcloud auth login
+```
+
+### Build and Deploy
+```bash
+gcloud builds submit --tag gcr.io/nextjs-docker-githubactions-google-cloud/nextjs-docker-githubactions-google-cloud
+gcloud run deploy --image gcr.io/nextjs-docker-githubactions-google-cloud/nextjs-docker-githubactions-google-cloud --platform managed
+```
+
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
@@ -24,7 +42,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Google Cloud Run
-[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run)
-
